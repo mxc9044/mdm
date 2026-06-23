@@ -1,0 +1,328 @@
+// ============================================================
+// Design Tokens — Tech-Business Theme
+// ============================================================
+$primary:       #2B6CB0;
+$primary-hover: #2C5282;
+$primary-light: #EBF4FF;
+$primary-glow:  rgba(43, 108, 176, 0.15);
+$accent:        #00D1B2;
+$accent-glow:   rgba(0, 209, 178, 0.12);
+
+$success:       #38A169;
+$success-light: #F0FFF4;
+$warning:       #D69E2E;
+$warning-light: #FFFFF0;
+$danger:        #E53E3E;
+$danger-light:  #FFF5F5;
+
+$text-primary:   #1A202C;
+$text-regular:   #4A5568;
+$text-secondary: #A0AEC0;
+$text-placeholder:#CBD5E0;
+
+$bg-page:   #F7FAFC;
+$bg-card:   #FFFFFF;
+$bg-aside:  #0F1B2D;
+$bg-aside-deep: #0A1220;
+
+$border-color:       #E2E8F0;
+$border-color-light: #EDF2F7;
+
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+
+$shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+$shadow-md:   0 4px 14px rgba(0, 0, 0, 0.06);
+$shadow-lg:   0 10px 40px rgba(0, 0, 0, 0.08);
+$shadow-card: 0 1px 3px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.02);
+$shadow-card-hover: 0 4px 16px rgba(43, 108, 176, 0.08), 0 0 0 1px rgba(43, 108, 176, 0.06);
+
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ============================================================
+// Reset & Base
+// ============================================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: $text-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $bg-page;
+}
+
+// ============================================================
+// Scrollbar
+// ============================================================
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+// ============================================================
+// Layout
+// ============================================================
+.el-main {
+  padding: $space-lg;
+  background-color: $bg-page;
+  overflow-y: auto;
+}
+
+// ============================================================
+// Page Header
+// ============================================================
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $text-primary;
+    letter-spacing: -0.03em;
+    position: relative;
+    padding-left: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(180deg, $primary 0%, $accent 100%);
+      border-radius: 2px;
+    }
+  }
+}
+
+// ============================================================
+// Search Bar
+// ============================================================
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: $space-md;
+  padding: 16px 20px;
+  background: $bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  border: 1px solid $border-color-light;
+  transition: all $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    border-color: rgba(43, 108, 176, 0.12);
+  }
+}
+
+// ============================================================
+// Table Card
+// ============================================================
+.table-card {
+  background: $bg-card;
+  border-radius: $radius-md;
+  padding: 16px 20px;
+  box-shadow: $shadow-card;
+  border: 1px solid $border-color-light;
+  transition: all $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    border-color: rgba(43, 108, 176, 0.12);
+  }
+}
+
+// ============================================================
+// Pagination
+// ============================================================
+.pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: $space-md;
+  padding-top: $space-md;
+  border-top: 1px solid $border-color-light;
+}
+
+// ============================================================
+// Element Plus Overrides
+// ============================================================
+
+// Button Primary
+.el-button--primary {
+  background: linear-gradient(135deg, $primary 0%, $primary-hover 100%) !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(43, 108, 176, 0.25) !important;
+  font-weight: 500 !important;
+  transition: all $transition-base !important;
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(135deg, $primary-hover 0%, darken($primary-hover, 5%) 100%) !important;
+    box-shadow: 0 4px 14px rgba(43, 108, 176, 0.35) !important;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Card
+.el-card {
+  border: 1px solid $border-color-light !important;
+  border-radius: $radius-md !important;
+  box-shadow: $shadow-card !important;
+  transition: all $transition-base !important;
+
+  &:hover {
+    box-shadow: $shadow-card-hover !important;
+    border-color: rgba(43, 108, 176, 0.12) !important;
+  }
+
+  .el-card__header {
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-primary;
+    padding: 16px 20px;
+    border-bottom: 1px solid $border-color-light;
+    background: linear-gradient(180deg, #FAFBFD 0%, #FFFFFF 100%);
+  }
+}
+
+// Table
+.el-table {
+  --el-table-border-color: #{$border-color-light};
+  --el-table-header-bg-color: #F8FAFC;
+
+  th.el-table__cell {
+    font-weight: 600;
+    color: $text-primary;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  td.el-table__cell {
+    font-size: 13px;
+    color: $text-regular;
+  }
+
+  .el-table__row {
+    transition: background $transition-fast;
+
+    &:hover > td.el-table__cell {
+      background: rgba(43, 108, 176, 0.02) !important;
+    }
+  }
+}
+
+// Dialog
+.el-dialog {
+  border-radius: $radius-lg !important;
+  overflow: hidden;
+  box-shadow: $shadow-lg !important;
+
+  .el-dialog__header {
+    padding: 18px 24px;
+    margin: 0;
+    border-bottom: 1px solid $border-color-light;
+    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  }
+
+  .el-dialog__title {
+    font-weight: 700;
+    font-size: 16px;
+    color: $text-primary;
+  }
+
+  .el-dialog__body {
+    padding: 24px;
+  }
+
+  .el-dialog__footer {
+    padding: 14px 24px;
+    border-top: 1px solid $border-color-light;
+    background: #FAFBFD;
+  }
+}
+
+// Tag
+.el-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+// Button text type
+.el-button--text {
+  padding: 4px 8px;
+}
+
+// Input
+.el-input__wrapper {
+  border-radius: $radius-sm !important;
+  transition: all $transition-base !important;
+}
+
+// ============================================================
+// Page Transition
+// ============================================================
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+// ============================================================
+// Utility
+// ============================================================
+.text-primary   { color: $text-primary; }
+.text-regular   { color: $text-regular; }
+.text-secondary { color: $text-secondary; }
+.text-success   { color: $success; }
+.text-warning   { color: $warning; }
+.text-danger    { color: $danger; }
