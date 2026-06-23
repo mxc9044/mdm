@@ -1,5 +1,5 @@
 -- ============================================================
--- HYD主数据平台 - 数据库初始化脚本
+-- 主数据平台 - 数据库初始化脚本
 -- 数据库: mdm
 -- 字符集: utf8mb4
 -- ============================================================
@@ -365,8 +365,8 @@ CREATE TABLE mdm_standard (
 -- -----------------------------------------------------------
 CREATE TABLE mdm_code_mapping (
     id              BIGINT          NOT NULL COMMENT '主键',
-    mdm_code        VARCHAR(64)     NOT NULL COMMENT 'HYD主数据平台标准编码',
-    mdm_name        VARCHAR(200)    DEFAULT NULL COMMENT 'HYD主数据平台标准名称',
+    mdm_code        VARCHAR(64)     NOT NULL COMMENT '主数据平台标准编码',
+    mdm_name        VARCHAR(200)    DEFAULT NULL COMMENT '主数据平台标准名称',
     local_system    VARCHAR(64)     NOT NULL COMMENT '本地系统标识',
     local_code      VARCHAR(64)     NOT NULL COMMENT '本地系统编码',
     local_name      VARCHAR(200)    DEFAULT NULL COMMENT '本地系统名称',

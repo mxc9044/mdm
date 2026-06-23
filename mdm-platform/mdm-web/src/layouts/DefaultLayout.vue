@@ -17,7 +17,7 @@
           </div>
           <transition name="fade">
             <div v-show="!isCollapse" class="logo-text-group">
-              <span class="logo-text">HYD 主数据</span>
+              <span class="logo-text">主数据</span>
               <span class="logo-sub">MDM Platform</span>
             </div>
           </transition>

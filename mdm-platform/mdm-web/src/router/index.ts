@@ -114,7 +114,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title || ''} - HYD主数据平台`
+  document.title = `${to.meta.title || ''} - 主数据平台`
   const userStore = useUserStore()
   if (to.path !== '/login' && !userStore.token) {
     next('/login')
